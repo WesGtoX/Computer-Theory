@@ -1,9 +1,10 @@
 # import Google Maps and Pandas library
 import googlemaps
+import config as config
 import pandas as pd
 
 # Set the Google Maps Key
-gmaps = googlemaps.Client(key='AIzaSyDO7h3u-XM5WvK0Sm3SmDRcPxFBFnk5bwQ')
+gmaps = googlemaps.Client(key=config.maps_apikey)
 
 # Import Origin and Destiny locals
 origin = pd.read_csv('locals.csv')

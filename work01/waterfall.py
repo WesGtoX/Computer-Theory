@@ -78,37 +78,46 @@ distances_matrix = [[0, 640811, 949945, 1401670, 1890739, 1683095, 1876670, 1584
                     [2083529, 1504158, 1568647, 743508, 749474, 1125887, 1137864, 1371121, 349531, 372993, 0, 930119],
                     [2967940, 2388569, 2453058, 1627919, 1419406, 1929356, 1895871, 2234899, 664607, 688069, 919089, 0]]
 
-dist_best_route = []
-index_best_route = [0]
 
-i = 0
-control = -1
-while len(index_best_route) != 12:
-    menor = -1
-    for k in range(len(distances_matrix[i])):
-        if k != i and menor == -1 and k not in index_best_route:
-            menor = distances_matrix[i][k]
-            control = k
-        if menor != -1 and menor > distances_matrix[i][k] and k != i and k not in index_best_route:
-            # not in retorna True se o valor não está contido na lista
-            menor = distances_matrix[i][k]
-            control = k
+def get_best_route():
+    dist_best_route = []
+    best_route_name = []
+    index_best_route = [0]
+    i = 0
+    control = -1
 
-    index_best_route.append(control)
-    dist_best_route.append(menor)
-    i = control
+    while len(index_best_route) != 12:
+        minus_route = -1
+        for k in range(len(distances_matrix[i])):
+            if k != i and minus_route == -1 and k not in index_best_route:
+                minus_route = distances_matrix[i][k]
+                control = k
+            if minus_route != -1 and minus_route > distances_matrix[i][k] and k != i and k not in index_best_route:
+                minus_route = distances_matrix[i][k]
+                control = k
 
-path = []
-
-for i in range(len(index_best_route)):
-    path.append(distance_locals[index_best_route[i]])
+        index_best_route.append(control)
+        dist_best_route.append(minus_route)
+        i = control
 
 
-waterfall_distance = 0
-for i in range(len(dist_best_route)):
-    waterfall_distance = waterfall_distance + dist_best_route[i]
+    for i in range(len(index_best_route)):
+        best_route_name.append(distance_locals[index_best_route[i]])
 
-print(path)
-print(index_best_route)
-print(dist_best_route)
-print(waterfall_distance)
+
+    waterfall_distance = 0
+    for i in range(len(dist_best_route)):
+        waterfall_distance = waterfall_distance + dist_best_route[i]
+
+    print(dist_best_route)
+    print(best_route_name)
+
+    i = 0
+    for i in range(len(dist_best_route)):
+        print(best_route_name[i] + " -- " + str(dist_best_route[i]) + " --> " + best_route_name[i+1])
+        i+=1
+
+    # return dist_best_route
+
+
+get_best_route()

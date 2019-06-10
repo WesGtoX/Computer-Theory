@@ -1,0 +1,55 @@
+GRAFO 2
+Deseja o grafo por nome das cachoeiras ou letra:
+0 - Letra
+1 - Nome
+==> 1
+ 1 – A – Cachoeira do Caracol
+ 2 – B – Cachoeira do Salto Grande
+ 3 – C – Cataratas do Iguacu
+ 4 – D – Cachoeira do Itambe
+ 5 – E – Cachoeira do Tabuleiro
+ 6 – F – Cachoeira Conde Deu
+ 7 – G – Cachoeira da Fumaca
+ 8 – H – Cachoeira Boca da Onca
+ 9 – I – Cachoeira Veu da Noiva
+10 – J – Cachoeira Santa Barbara
+11 – K – Cachoeira do Tororo
+12 – L – Cachoeira do Formiga
+Informa o a cidade que deseja sair:
+==> 6
+----------
+Esse grafo é bidirectional:
+0 - Não
+1 - Sim
+==> 0
+Grafo original:
+Vertices: 
+['Cachoeira Boca da Onca', 'Cachoeira Conde Deu', 'Cachoeira Santa Barbara', 'Cachoeira Veu da Noiva', 'Cachoeira da Fumaca', 'Cachoeira do Caracol', 'Cachoeira do Formiga', 'Cachoeira do Itambe', 'Cachoeira do Salto Grande', 'Cachoeira do Tabuleiro', 'Cachoeira do Tororo', 'Cataratas do Iguacu']
+----------
+Caminhos mais curtos desde o vertice 'CACHOEIRA CONDE DEU': 
+CACHOEIRA CONDE DEU --- CACHOEIRA BOCA DA ONCA = custo: 0.1815937
+CACHOEIRA CONDE DEU --- CACHOEIRA SANTA BARBARA = custo: 0.1453035
+CACHOEIRA CONDE DEU --- CACHOEIRA VEU DA NOIVA = custo: 0.1429575
+CACHOEIRA CONDE DEU --- CACHOEIRA DO TORORO --- CACHOEIRA DA FUMACA = custo: 0.22640949
+CACHOEIRA CONDE DEU --- CACHOEIRA DO CARACOL = custo: 0.1711914
+CACHOEIRA CONDE DEU --- CACHOEIRA DO FORMIGA = custo: 0.1930347
+CACHOEIRA CONDE DEU --- CACHOEIRA VEU DA NOIVA --- CACHOEIRA DO ITAMBE = custo: 0.2476591
+CACHOEIRA CONDE DEU --- CACHOEIRA DO SALTO GRANDE = custo: 0.1093266
+CACHOEIRA CONDE DEU --- CACHOEIRA DO SALTO GRANDE --- CACHOEIRA DO TABULEIRO = custo: 0.2403927
+CACHOEIRA CONDE DEU --- CACHOEIRA DO TORORO = custo: 0.1126228
+CACHOEIRA CONDE DEU --- CATARATAS DO IGUACU = custo: 0.1619624
+----------
+Minima Arvore Abrangente (Peso Final = 1.2966978):
+----------
+Arestas: 
+[('Cachoeira Boca da Onca', 'Cachoeira do Itambe', 0.1191969),
+ ('Cachoeira Conde Deu', 'Cachoeira do Salto Grande', 0.1093266),
+ ('Cachoeira Conde Deu', 'Cachoeira do Tororo', 0.1126228),
+ ('Cachoeira Veu da Noiva', 'Cachoeira do Tabuleiro', 0.1053173),
+ ('Cachoeira do Itambe', 'Cachoeira Santa Barbara', 0.106927),
+ ('Cachoeira do Itambe', 'Cachoeira Veu da Noiva', 0.104581),
+ ('Cachoeira do Itambe', 'Cachoeira do Caracol', 0.1448976),
+ ('Cachoeira do Itambe', 'Cataratas do Iguacu', 0.1067247),
+ ('Cachoeira do Salto Grande', 'Cachoeira Boca da Onca', 0.1308287),
+ ('Cachoeira do Tabuleiro', 'Cachoeira do Formiga', 0.1424885),
+ ('Cachoeira do Tororo', 'Cachoeira da Fumaca', 0.1137867)]
